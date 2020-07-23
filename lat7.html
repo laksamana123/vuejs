@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <title>Hello Lurd</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <counter></counter>
+            <counter></counter>
+            <counter></counter>
+        </div>
+       
+
+        <script>
+            
+           Vue.component('counter',
+           {
+               data: function () {
+                   return {
+                       count: 0
+                   }
+               },
+               template: '<button v-on:click="count++">you clicked me {{count}} times</button>'
+           }
+            );
+        </script>
+    </body>
+</html>

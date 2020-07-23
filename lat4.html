@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <title>Hello Lurd</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <form>
+                <p v-if="itemInStock > 10">{{itemInStock}} in stock</p>
+                <p v-else-if="itemInStock > 0">Hurry up, {{itemInStock}} items left </p>
+                <p v-else>Sorry, we're all out!</p>
+            </form>
+        </div>
+       
+
+        <script>
+            var app = new Vue({
+                el : "#app",
+                data : {
+                    "itemInStock" : "25"
+                }
+             })
+        </script>
+    </body>
+</html>

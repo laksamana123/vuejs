@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <title>Hello Lurd</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <h3>{{judul}}</h3>
+          <form v-on:submit.prevent>
+              <input type="text" name="namaSiswa" id="namaSiswa" @keyup.enter="simpan" v-model="guru">
+              <button type="button" @click="simpan">Simpan</button>
+          </form>
+          <table v-if="dataGuru.length > 0">
+              <tr>
+                  <thead>
+                      <th style="width:30px;">No</th>
+                      <th style="width:200px;">Nama Guru</th>
+                  </thead>
+              </tr>
+              <tr>
+                  <tbody v-for="(guru, index) in dataGuru" :key="index">
+                      <td>{{index+1}}</td>
+                      <td>{{guru}}</td>
+                  </tbody>
+              </tr>
+          </table>
+        </div>
+       
+
+        <script>
+            var app = new Vue({
+                el : "#app",
+                methods : {
+                    pesan : function(){
+                        alert("selamat belajar vue.js")
+                    }
+                },
+                simpan : function(){
+                    this.dataGuru.push(this.guru);
+                    this.guru = "";
+                },
+                data : {
+                    'dataGuru' : [
+                        {'Nama' : 'Alan', 'Kelas' : 'XRPL6'},
+                        {'Nama' : 'Nala', 'Kelas' : 'XRPL5'},
+                        {'Nama' : 'Alan', 'Kelas' : 'XIRPL4'},
+                        {'Nama' : 'Nala', 'Kelas' : 'XIRPL2'},
+                        {'Nama' : 'Alan', 'Kelas' : 'XIIRPL5'},
+                        {'Nama' : 'Nala', 'Kelas' : 'XIIRPL3'},
+                    ],
+                    'guru' : '',
+                    'judul' : 'Masukkan nama guru'
+                }
+             })
+        </script>
+    </body>
+</html>

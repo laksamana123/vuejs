@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <title>Hello Lurd</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <p>{{ greet('Alan') }}</p>
+        </div>
+        <div id="app2">
+            <a v-bind:href="url">SMK Telkom Malang</a>
+        </div>
+
+        <script>
+            var app = new Vue({
+                el : "#app",
+                methods: {
+                    greet: function (name) {
+                        return "Aashiyap santuy " + name;
+                    }
+                }
+             })
+            var app = new Vue({
+                el : "#app2",
+                data : {
+                    "url" : "https://smktelkom-mlg.sch.id/"
+                }
+            })
+        </script>
+    </body>
+</html>
