@@ -21,9 +21,13 @@
                        count: 0
                    }
                },
-               template: '<button v-on:click="count++">you clicked me {{count}} times</button>'
+               template: '<button @click="count++">{{count}}</button>'
            }
             );
+
+            var app = new vue ({
+                el : "#app"
+            })
         </script>
     </body>
 </html>
