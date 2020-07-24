@@ -11,7 +11,7 @@
               <input type="text" name="namaSiswa" id="namaSiswa" @keyup.enter="simpan" v-model="guru">
               <button type="button" @click="simpan">Simpan</button>
           </form>
-          <table v-if="dataGuru.length > 0">
+          <table border="1" style="border-collapse: collapse" v-if="dataGuru.length > 0">
               <tr>
                   <thead>
                       <th style="width:30px;">No</th>
