@@ -1,33 +1,31 @@
-<html>
-    <head>
-        <script src="vue.js"></script>
-        <title>Hello Lurd</title>
-    </head>
-    <body>
-
-        <div id="app">
-            <counter></counter>
-            <counter></counter>
-            <counter></counter>
-        </div>
+<!DOCTYPE html> 
+<html lang = "en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title> Hello world</title>
+</head>
+<body>
+    <div id= "app" >
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+    </div>
+    <script>
        
+        Vue.component('counter',
+        {
+            data: function () { 
+                return {
+                    count : 0
+                }
+            },
+            template: '<button @click="count++">{{count}}</button>'
+        });
+        var app = new Vue({
+            el: '#app',
+        })
 
-        <script>
-            
-           Vue.component('counter',
-           {
-               data: function () {
-                   return {
-                       count: 0
-                   }
-               },
-               template: '<button @click="count++">{{count}}</button>'
-           }
-            );
 
-            var app = new vue ({
-                el : "#app"
-            })
-        </script>
-    </body>
+    </script>
+</body>
 </html>
