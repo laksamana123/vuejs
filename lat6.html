@@ -7,9 +7,10 @@
 
         <div id="app">
             <h3>{{judul}}</h3>
-          <form v-on:submit.prevent>
+          <form submit.prevent>
+              <button v-on:click="pesan">Tampil</button>
               <input type="text" name="namaSiswa" id="namaSiswa" @keyup.enter="simpan" v-model="guru">
-              <button type="button" @click="simpan">Simpan</button>
+              <button v-on:click="simpan">Simpan</button>
           </form>
           <table border="1" style="border-collapse: collapse" v-if="dataGuru.length > 0">
               <tr>
@@ -34,11 +35,12 @@
                 methods : {
                     pesan : function(){
                         alert("selamat belajar vue.js")
-                    }
+                    
                 },
                 simpan : function(){
                     this.dataGuru.push(this.guru);
                     this.guru = "";
+                }
                 },
                 data : {
                     'dataGuru' : [
